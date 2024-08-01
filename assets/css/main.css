@@ -1,5 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 /*
 	Landed by HTML5 UP
@@ -36,7 +37,9 @@ body {
 ol, ul {
 	list-style: none;
 }
-
+.taskbar {
+    position: fixed; /* Keeps the taskbar in place when scrolling */
+}
 blockquote, q {
 	quotes: none;
 }
@@ -631,11 +634,47 @@ input, select, textarea {
 	}
 
 /* Container */
+.experience-box {
+	width: 300px;
+	padding: 20px;
+	background-color: #6973c6;
+	border: 2px solid #f2b878;
+	border-radius: 10px;
+	text-align: center;
+	font-family: Arial, sans-serif;
+}
 
+.experience-box .icon {
+	font-size: 24px;
+	margin-bottom: 10px;
+	margin-right: 15px;
+}
+
+.experience-box .title {
+	font-size: 18px;
+	font-weight: bold;
+	color: #ee2222;
+	margin-bottom: 10px;
+	margin-right: 15px;
+}
+
+.experience-box .position {
+	font-size: 16px;
+	font-weight: bold;
+	color: #3e3e3e;
+	margin-right: 15px;
+}
+
+.experience-box .company {
+	font-size: 16px;
+	color: #3e3e3e;
+	margin-right: 15px;
+}
 	.container {
 		margin: 0 auto;
 		max-width: calc(100% - 4em);
 		width: 70em;
+
 	}
 
 		.container.xsmall {
@@ -678,6 +717,105 @@ input, select, textarea {
 			}
 
 		}
+
+		/* Importing Google Fonts */
+.container {
+    text-align: center;
+}
+
+h2 {
+    color: #FFC0CB;
+    margin-bottom: 20px;
+    font-weight: 600; /* Bold heading */
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    perspective: 1000px;
+}
+
+/* Individual Card */
+.card {
+    background-color: transparent;
+    width: 220px; /* Slightly increased size for more content */
+    height: 280px;
+    perspective: 1000px;
+}
+
+/* Inner Card (for flip effect) */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 15px; /* More rounded corners */
+    overflow: hidden; /* To hide overflow when flipping */
+}
+
+/* Flip on hover */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back Faces of the Card */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px; /* Matches the border radius of inner card */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow for depth */
+    transition: background-color 0.5s ease; /* Smooth transition for background color change */
+}
+
+/* Front Face */
+.card-front {
+    background-color: #FFC0CB; /* Teal background */
+    color: #0000;
+    border: 2px solid #264653; /* Darker border for contrast */
+}
+
+/* Back Face */
+.card-back {
+    background-color: #e76f51; /* Coral background */
+    color: #ffffff;
+    border: 2px solid #264653; /* Matches the front border */
+    transform: rotateY(180deg); /* Initially flipped */
+}
+
+/* Optional: Typography and Text Styles */
+.card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 600; /* Semi-bold */
+    color: #ffffff; /* White text color */
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+    color: #000000; /* Slightly lighter text */
+}
+
+/* Adding a slight hover effect to highlight the card */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+
+/* Add any additional custom styles as needed */
 
 /* Row */
 
@@ -3143,11 +3281,11 @@ input, select, textarea {
 		}
 
 		.spotlight.style2 .content {
-			border-color: #5480f1;
+			border-color: #e44c65;
 		}
 
 		.spotlight.style3 .content {
-			border-color: #39c088;
+			border-color: #e44c65;
 		}
 
 		.spotlight.inactive .content {
@@ -4091,6 +4229,7 @@ input, select, textarea {
 				padding: 3em 1.5625em 5.25em 1.5625em;
 			}
 
+			
 		/* Footer */
 
 			#footer {
